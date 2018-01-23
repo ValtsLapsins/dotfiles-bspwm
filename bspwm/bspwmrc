@@ -1,0 +1,23 @@
+#! /bin/sh
+xinput set-prop 15 307 1 1
+wal -R
+sxhkd &
+pulseaudio &
+start-dunst &
+# feh --bg-fill ~/.wallpapers/void.jpg
+xrdb -merge ~/.Xresources
+
+bspc monitor -d term web devel srv media misc tmp 
+
+
+bspc config border_width         5
+bspc config window_gap          30
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config click_to_focus true
+bspc rule -a Pinentry state=floating
+
+compton --config /home/valts/.config/compton.conf

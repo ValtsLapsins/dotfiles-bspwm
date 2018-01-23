@@ -1,0 +1,34 @@
+#!/bin/bash
+export BIN="./oclHashcat-plus64.bin"
+export OPTS="--attack-mode 3 --gpu-accel 160 --gpu-loops 1024 --gpu-watchdog 0 --runtime 30 --force --custom-charset1 ?l?d?s?u"
+ 
+$BIN $OPTS --hash-type    0 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type   11 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type   21 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:aa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type  100 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type  101 '{SHA}aaaaaaaaaaaaaaaaaaaaaaaaaaQ=' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type  111 '{SSHA}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaQ==' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type  112 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:aaaaaaaaaa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type  121 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:a' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type  122 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type  131 '0x0100aaaaaaaa0000000000000000000000000000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type  132 '0x0100aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type  300 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type  400 '$H$9aaaaaaaaaaaaaaaaaaaaaaaaaaaaa1' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type  500 '$1$aaaaaaaa$aaaaaaaaaaaaaaaaaaaaa1' ?1?1?1?1?1?1?1?1 --gpu-loops 1000
+$BIN $OPTS --hash-type  900 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type 1000 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type 1100 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:a' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type 1400 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type 1500 'aaaaaaaaaaaaw' ?1?1?1?1?1?1?1?1 --gpu-accel 80
+$BIN $OPTS --hash-type 1600 '$apr1$aaaaaaaa$aaaaaaaaaaaaaaaaaaaaa1' ?1?1?1?1?1?1?1?1 --gpu-loops 1000
+$BIN $OPTS --hash-type 1700 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1?1?1 --gpu-accel 80
+$BIN $OPTS --hash-type 1722 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type 2100 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:a' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type 2400 'aaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type 2500 test.hccap ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type 2600 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type 2611 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:aaa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type 2711 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type 2811 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:aaaaa' ?1?1?1?1?1?1?1?1
+$BIN $OPTS --hash-type 3000 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' ?1?1?1?1?1?1?1
